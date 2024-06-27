@@ -1,0 +1,12 @@
+#This is a comment
+#this is a section header
+[title]
+#this is the title of the window
+Game Engine Testing
+[window size]
+#fullscreen
+false
+1000 1000
+
+[map]
+a1.dat

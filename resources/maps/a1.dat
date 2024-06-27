@@ -1,0 +1,31 @@
+[room size]
+100 100
+
+[object]
+color: 0,0,255
+position: 0,0
+size: 500,500
+collision: true
+script: input_test.dat
+objend
+
+[object]
+color: 255,0,0
+position: 500,0
+size: 500,500
+collision: false
+objend
+
+[object]
+color: 0,255,0
+position: 0,500
+size: 500,500
+collision: false
+objend
+
+[object]
+color: 0,0,0
+position: 500,500
+size: 500,500
+collision: false
+objend

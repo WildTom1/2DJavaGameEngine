@@ -1,0 +1,15 @@
+if input 87
+y--
+fi
+
+if input 65
+x--
+fi
+
+if input 83
+y++
+fi
+
+if input 68
+x++
+fi
