@@ -135,17 +135,19 @@ public class Map extends JPanel {
 	public void paintComponent(Graphics g) {//this gets rid of all flickering and Z-fighting; this renders all of the objects
 		super.paintComponent(g);
 		Graphics2D g2D = (Graphics2D) g;
+		int xMult;
+		int yMult;
 		for(int i=comps.length-1;i>-1;i--) {
 			if(comps[i].isColor) {
 				g2D.setColor(comps[i].color);
 				g2D.fillRect(comps[i].x, comps[i].y, comps[i].width, comps[i].height);
 			} else if(comps[i].image==null) {
 				g2D.setColor(Color.magenta);
-				g2D.fillRect(0, 0, getWidth() / 2, getHeight() / 2);
-				g2D.fillRect(getWidth() / 2, getHeight() / 2, getWidth() / 2, getHeight() / 2);
+				g2D.fillRect(comps[i].x, comps[i].y, comps[i].width / 2, comps[i].height / 2);
+				g2D.fillRect(comps[i].x + (comps[i].width/2), comps[i].y + (comps[i].height/2), comps[i].width/2, comps[i].height / 2);
 				g2D.setColor(Color.black);
-				g2D.fillRect(getWidth() / 2, 0, getWidth() / 2, getHeight() / 2);
-				g2D.fillRect(0, getHeight() / 2, getWidth() / 2, getHeight() / 2);
+				g2D.fillRect(comps[i].x + (comps[i].width/2), comps[i].y, comps[i].width / 2, comps[i].height / 2);
+				g2D.fillRect(comps[i].x, comps[i].y + (comps[i].height/2), comps[i].width / 2, comps[i].height / 2);
 			} else {
 				g2D.drawImage(comps[i].image.getImage(),comps[i].x,comps[i].y,comps[i].width,comps[i].height,null);
 			}
